@@ -1,6 +1,9 @@
 .title {
     height: 10vh;
+    width: 75vw;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgb(93, 93, 255);
+    color: white;
 }

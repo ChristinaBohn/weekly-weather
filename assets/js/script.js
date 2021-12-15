@@ -1,15 +1,54 @@
 
+// Fetch geo data (lat, lon)
 
-        fetch('people.json')
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
-            appendData(data);
-        })
+
+// limit + 5
+
+// appid (custom API key)
+
+// Fetch One Call weather data (units = imperial)
+// Exclude minutely, hourly
+
+var cityName;
+
+function geoData (cityName) {
+
+  var url = 'https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=hourly,daily&appid={API key}&units=imperial';
+
+  fetch( url )
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+        console.log( data );
+
+        oneCall( lat,lon );
+    });
+
+}
+
+function oneCall(lat, lon) {
+
+  var url = '';
+
+  fetch( url )
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(data) {
+        appendData( data );
+    });
+
+}
+
 
 
 // Print weather data to cards
+        // From <form> listen to "submit"
+            // Select <input> .val() and provide to geo API
+
+        // From <button> listen to "click"
+            // Get the city from the button's data attribute
 
 function appendData(data) {
     var mainContainer = document.getElementById("myData");
@@ -22,6 +61,7 @@ function appendData(data) {
 
   // moment(data.date, 'X').format('L')
 //https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=hourly,daily&appid={API key}&units=imperial
+
 
 
 
