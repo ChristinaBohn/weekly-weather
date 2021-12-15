@@ -13,15 +13,18 @@
         <h1 class="title">Weather Dashboard</h1>
     </header>
     <main> 
+        <!-- Search bar -->
         <h2>Search for a city:</h2>
         <div class="col-3">
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Seattle" aria-label="Recipient's username" aria-describedby="button-addon2">
+                <input id="cityInput" type="text" class="form-control" placeholder="Seattle" aria-label="Recipient's username" aria-describedby="button-addon2">
                 <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
             </div>
         </div>
-        <div class="col-6">
-            <div class="card" style="width: 18rem;">
+
+        <!-- Featured/Today's weather -->
+        <div class="col-6" id="todaysWeather">
+            <!-- <div class="card" style="width: 18rem;">
                 <div class="card-header">
                   City
                 </div>
@@ -31,8 +34,23 @@
                   <li class="list-group-item">Humitdity: </li>
                   <li class="list-group-item">UV Index: </li>
                 </ul>
-              </div>
-        <div class="col-?">
+            </div> -->
+        </div>
+
+        <!-- 5-Day Forecast -->
+        <div class="card-group" id="forecast">
+            <!-- <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Date</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+                <img src="..." class="card-img-top" alt="...">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Temperature: </li>
+                  <li class="list-group-item">Wind: </li>
+                  <li class="list-group-item">Humidity: </li>
+                </ul>
+            </div>
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">Date</h5>
@@ -44,12 +62,50 @@
                   <li class="list-group-item">Wind: </li>
                   <li class="list-group-item">Humidity: </li>
                 </ul>
-              </div>
-        </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Date</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+                <img src="..." class="card-img-top" alt="...">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Temperature: </li>
+                  <li class="list-group-item">Wind: </li>
+                  <li class="list-group-item">Humidity: </li>
+                </ul>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Date</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+                <img src="..." class="card-img-top" alt="...">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Temperature: </li>
+                  <li class="list-group-item">Wind: </li>
+                  <li class="list-group-item">Humidity: </li>
+                </ul>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Date</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+                <img src="..." class="card-img-top" alt="...">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Temperature: </li>
+                  <li class="list-group-item">Wind: </li>
+                  <li class="list-group-item">Humidity: </li>
+                </ul>
+            </div> -->
         </div>
 
     </main> 
-    <script src="./assets/js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="./assets/js/script.js"></script>
+
 </body>
 </html>
