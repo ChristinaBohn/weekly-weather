@@ -50,20 +50,20 @@ function oneCall(lat, lon, cityName) {
 
       for(let i = 1; i < data.daily.length - 2; i++) {
  
-        var dailyDate = moment(data.daily.i.dt, 'X').format('L');
+        var dailyDate = moment(data.daily[i].dt.day, 'X').format('L');
         var cardForecast = $('<div>').addClass('card').css('width', '18rem');
         var cardDailyHeader = $('<div>').addClass('card-header').text(dailyDate);
         var forecastList = $('<ul>').addClass('list-group list-group-flush');
-        var tempDaily = $('<li>').addClass('list-group-item').text('Temperature: ' + data.daily.i.temp + 'ºF');
-        var humidDaily = $('<li>').addClass('list-group-item').text('Humidity: ' + data.daily.i.humidity + '%');
-        var windDaily = $('<li>').addClass('list-group-item').text('Wind Speed: ' + data.daily.i.wind_speed + 'MPH');
-        var uviDaily = $('<li>').addClass('list-group-item').text('UV Index: ' + data.daily.i.uvi );
+        var tempDaily = $('<li>').addClass('list-group-item').text('Temperature: ' + data.daily[i].temp.day + 'ºF');
+        var humidDaily = $('<li>').addClass('list-group-item').text('Humidity: ' + data.daily[i].humidity + '%');
+        var windDaily = $('<li>').addClass('list-group-item').text('Wind Speed: ' + data.daily[i].wind_speed + 'MPH');
+        var uviDaily = $('<li>').addClass('list-group-item').text('UV Index: ' + data.daily[i].uvi );
   
         forecastList.append(tempDaily, humidDaily, windDaily, uviDaily);
-        cardForcast.append(cardDailyHeader, forecastList);
+        cardForecast.append(cardDailyHeader, forecastList);
         $('#forecast').append(cardForecast)
       }
-      console.log(dailyDate);
+      console.log(data);
     });
 
 }
