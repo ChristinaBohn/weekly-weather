@@ -1,9 +1,3 @@
-
-// Fetch geo data (lat, lon)
-
-
-// limit + 5
-
 // appid (custom API key)
 
 // Fetch One Call weather data (units = imperial)
