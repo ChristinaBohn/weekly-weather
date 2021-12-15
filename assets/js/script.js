@@ -27,7 +27,7 @@ function geoData (cityName) {
 }
 
 function oneCall(lat, lon, cityName) {
-  var url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
+  var url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly&appid=${apiKey}&units=imperial`;
   fetch( url )
     .then(function(response) {
       return response.json();
@@ -47,16 +47,23 @@ function oneCall(lat, lon, cityName) {
       weatherList.append(temp, humid, wind, uvi);
       cardToday.append(cardHeader, weatherList);
       $('#todaysWeather').append(cardToday)
-      // console.log(currentDate)
 
-      for(let i = 1; i<data.daily.length - 2; i++) {
-       
+      for(let i = 1; i < data.daily.length - 2; i++) {
+ 
+        var dailyDate = moment(data.daily.i.dt, 'X').format('L');
         var cardForecast = $('<div>').addClass('card').css('width', '18rem');
-
-        // append to forecast div
+        var cardDailyHeader = $('<div>').addClass('card-header').text(dailyDate);
+        var forecastList = $('<ul>').addClass('list-group list-group-flush');
+        var tempDaily = $('<li>').addClass('list-group-item').text('Temperature: ' + data.daily.i.temp + 'ºF');
+        var humidDaily = $('<li>').addClass('list-group-item').text('Humidity: ' + data.daily.i.humidity + '%');
+        var windDaily = $('<li>').addClass('list-group-item').text('Wind Speed: ' + data.daily.i.wind_speed + 'MPH');
+        var uviDaily = $('<li>').addClass('list-group-item').text('UV Index: ' + data.daily.i.uvi );
+  
+        forecastList.append(tempDaily, humidDaily, windDaily, uviDaily);
+        cardForcast.append(cardDailyHeader, forecastList);
         $('#forecast').append(cardForecast)
       }
-      console.log(data);
+      console.log(dailyDate);
     });
 
 }
